@@ -1,0 +1,6 @@
+
+
+<%= for activity <-  @activities do %>
+    <p><%= activity.location %></p>
+  <% end %>
+  

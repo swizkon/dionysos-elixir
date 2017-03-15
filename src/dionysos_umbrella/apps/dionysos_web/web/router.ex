@@ -18,6 +18,7 @@ defmodule DionysosWeb.Router do
 
     get "/", PageController, :index
     get "/activities/:id", ActivityController, :show
+    get "/activities", ActivityController, :index
   end
 
   # Other scopes may use custom stacks.
