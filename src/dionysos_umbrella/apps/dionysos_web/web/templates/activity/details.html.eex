@@ -1,7 +1,11 @@
 
+
+<a href="<%= activity_path(@conn, :index) %>" class="btn btn-primary">Back</a>
+
 <h1><%= @activity.description %> <small><%= @activity.location %></small></h1>
 
 <h3><%= format_date @activity.starts %></h3>
+<h3><%= format_avatar @activity.username %></h3>
 
 <div class="jumbotron">
   <p class="lead">A productive web framework that<br />does not compromise speed and maintainability.</p>

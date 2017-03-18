@@ -1,0 +1,22 @@
+<h1>What are you up to?</h1>
+<%= form_for @changeset, activity_path(@conn, :add), fn f ->  %>
+
+<div class="form-group">
+    <%= label f, :username, "Who" %>
+    <%= text_input f, :username, class: "form-control" %>
+</div>
+<div class="form-group">
+    <%= label f, :description, "What" %>
+    <%= textarea f, :description, class: "form-control", rows: 3 %>
+</div>
+<div class="form-group">
+    <%= label f, :location, "Where" %>
+    <%= text_input f, :location, class: "form-control" %>
+</div>
+<div class="form-group">
+    <%= label f, :starts, "When" %>
+    <%= text_input f, :starts, class: "form-control", type: "datetime-local" %>
+</div>
+
+<%= submit "Add", class: "btn btn-primary pull-right" %>
+<% end %>

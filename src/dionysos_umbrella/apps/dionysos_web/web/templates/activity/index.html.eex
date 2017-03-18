@@ -1,6 +1,12 @@
 
 
-<%= for activity <-  @activities do %>
-    <p><%= activity.location %></p>
-  <% end %>
-  
+
+
+<a href="<%= activity_path(@conn, :create) %>" class="btn btn-primary pull-right">Add activity</a>
+<h1>Your feed</h1>
+
+<div class="list-group">
+<%= for a <-  @activities do %>
+  <%= render "summary.html", activity: a, conn: @conn %>
+<% end %>
+</div>

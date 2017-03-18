@@ -19,7 +19,7 @@ defmodule Dionysos.Mixfile do
   #
   # Type "mix help compile.app" for more information
   def application do
-    [applications: [:logger, :postgrex, :ecto],
+    [applications: [:logger, :postgrex, :ecto, :crypto],
      mod: {Dionysos, []}]
   end
 
@@ -43,7 +43,8 @@ defmodule Dionysos.Mixfile do
 
   defp aliases do
     [
-      "init": ["ecto.create", "ecto.migrate", "run priv/repo/seed.exs"]
+      "init": ["ecto.create", "ecto.migrate", "run priv/repo/seed.exs"],
+      "restore": ["ecto.drop", "init"]
     ]
   end
 

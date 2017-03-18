@@ -1,0 +1,17 @@
+<a href="<%= activity_path(@conn, :show, @activity.id) %>">
+  <div class="list-group-item">
+  <div class="media">
+
+  <span class="pull-left">
+    <img class="img-circle" src="<%= format_avatar @activity.username %>" />
+  </span>
+
+    <h4 class="list-group-item-heading"><%= @activity.description %></h4>
+    <span>
+      <span class="text-muted"><%= @activity.location %></span>
+      <span class="pull-right"><%= format_date @activity.starts %></span>
+    </span>
+
+  </div>
+  </div>
+</a>

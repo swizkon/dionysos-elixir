@@ -8,4 +8,12 @@ defmodule DionysosWeb.ActivityView do
     #|> Timex.DateFormat.format!("{h12}:{0m} {am}")
 
   end
+
+  def format_avatar(username) do
+    hash = :crypto.hash(:md5, username)
+           |> Base.encode16
+           |> String.downcase
+    "https://www.gravatar.com/avatar/#{hash}"
+  end
+
 end

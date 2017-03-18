@@ -3,7 +3,8 @@ defmodule Dionysos.Repo.Migrations.AddActivitiesTable do
 
   def change do
       create table(:activities) do
-        add :user, :string, size: 100
+        add :user_id, :integer
+        add :username, :string, size: 50
         add :description, :string, size: 250
         add :location, :string, size: 50
         add :starts, :utc_datetime

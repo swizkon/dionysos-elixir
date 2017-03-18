@@ -4,7 +4,7 @@ defmodule Dionysos.Activities do
     import Ecto.Changeset
 
     schema "activities" do
-       field :user, :string
+       field :user_id, :integer
        field :description, :string
        field :location, :string
        field :starts, Ecto.DateTime
@@ -12,7 +12,7 @@ defmodule Dionysos.Activities do
        timestamps 
     end
 
-    @required_fields ~w(user description)a
+    @required_fields ~w(user_id description)a
     @optional_fields ~w(location starts)a
 
     def changeset(activity, params \\ %{}) do

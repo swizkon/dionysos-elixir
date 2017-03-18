@@ -17,8 +17,10 @@ defmodule DionysosWeb.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
-    get "/activities/:id", ActivityController, :show
     get "/activities", ActivityController, :index
+    get "/activities/new", ActivityController, :create
+    post "/activities/new", ActivityController, :add
+    get "/activities/:id", ActivityController, :show
   end
 
   # Other scopes may use custom stacks.

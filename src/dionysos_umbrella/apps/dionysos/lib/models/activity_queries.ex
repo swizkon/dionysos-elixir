@@ -8,12 +8,12 @@ defmodule Dionysos.ActivityQueries do
     end
 
     def get_all do
-        Repo.all(from Activities)
+        Repo.all(from a in Activities, order_by: [desc: a.updated_at])
     end
 
-    def get_all_from_user(userhash) do
+    def get_all_from_user(username) do
         query = from a in Activities,
-                where: a.user == ^userhash
+                where: a.username == ^username
 
         Repo.all(query)
     end
